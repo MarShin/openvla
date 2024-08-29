@@ -647,11 +647,11 @@ OXE_DATASET_CONFIGS = {
         "state_encoding": StateEncoding.POS_EULER,
         "action_encoding": ActionEncoding.EEF_POS,
     },
-    # New dataset with 16 action space
+    # New dataset with 16 dims action space
     "aloha_mobile": {
         "image_obs_keys": {
             "primary": "cam_high",
-            "secondary": "cam_left_wrist",  # TODO: fix how images are concat later
+            "secondary": "cam_left_wrist",  # only primary obs is used atm.
             "wrist": "cam_right_wrist",
         },
         "depth_obs_keys": {"primary": None, "secondary": None, "wrist": None},
