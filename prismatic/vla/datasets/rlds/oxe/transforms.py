@@ -825,15 +825,10 @@ def tdroid_dataset_transform(trajectory: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def aloha_mobile_transform(trajectory: Dict[str, Any]) -> Dict[str, Any]:
-    trajectory["action"] = tf.concat(
-        [
-            trajectory["action"][:, :6],
-            binarize_gripper_actions(trajectory["action"][:, -1])[:, None],
-        ],
-        axis=1,
-    )
-    trajectory["observation"]["EEF_state"] = trajectory["observation"]["cartesian_position"][:, :6]
-    trajectory["observation"]["gripper_state"] = trajectory["observation"]["gripper_position"][:, -1:]
+    # print('##### TRAJECTORY #####')
+    # print(trajectory)
+    # import code; code.interact(local=locals())
+
     return trajectory
 
 
