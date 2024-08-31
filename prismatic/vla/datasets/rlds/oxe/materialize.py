@@ -34,6 +34,7 @@ def make_oxe_dataset_kwargs(
 
     # [Contract] For EEF_POS & EEF_R6 actions, only the last action dimension (gripper) is absolute!
     # Normalize all action dimensions *except* the gripper
+    # JOINT_POS_BIMANUAL_MOBILE including continuous gripper actions according to Mobile Aloha paper
     if dataset_kwargs["action_encoding"] is ActionEncoding.EEF_POS:
         dataset_kwargs["absolute_action_mask"] = [False] * 6 + [True]
         dataset_kwargs["action_normalization_mask"] = [True] * 6 + [False]

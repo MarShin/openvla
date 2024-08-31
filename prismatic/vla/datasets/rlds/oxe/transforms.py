@@ -826,8 +826,11 @@ def tdroid_dataset_transform(trajectory: Dict[str, Any]) -> Dict[str, Any]:
 
 def aloha_mobile_transform(trajectory: Dict[str, Any]) -> Dict[str, Any]:
     # print('##### TRAJECTORY #####')
-    # print(trajectory)
     # import code; code.interact(local=locals())
+
+    # Experiment:
+    # 1. no change - default just use `cam_high` as primary obs
+    # 2. concat `cam_high`, `cam_left_wrist`, `cam_right_wrist` as primary obs
 
     return trajectory
 
